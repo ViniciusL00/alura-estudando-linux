@@ -168,4 +168,4 @@ O **Kernel** é o núcleo do sistema operacional. Ele atua como uma ponte entre 
 
 ---
 
-📝 **Resumo Final:** Aprender os comandos e diretórios do Linux é o primeiro passo para se tornar um profissional versátil na área de tecnologia. Dominar o terminal é essencial para devs, sysadmins, e qualquer usuário avançado do sistema.+
+📝 **Resumo Final:** Aprender os comandos e diretórios do Linux é o primeiro passo para se tornar um profissional versátil na área de tecnologia. Dominar o terminal é essencial para devs, sysadmins, e qualquer usuário avançado do sistema.
