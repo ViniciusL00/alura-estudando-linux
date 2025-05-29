@@ -169,3 +169,66 @@ O **Kernel** é o núcleo do sistema operacional. Ele atua como uma ponte entre 
 ---
 
 📝 **Resumo Final:** Aprender os comandos e diretórios do Linux é o primeiro passo para se tornar um profissional versátil na área de tecnologia. Dominar o terminal é essencial para devs, sysadmins, e qualquer usuário avançado do sistema.
+
+
+# 🐧 Revisão de Comandos Essenciais no Terminal Linux
+
+## 📁 Diretórios e Navegação
+
+- `pwd` (📍 *Print Working Directory*): Mostra o caminho completo do diretório atual.
+  ```bash
+  pwd
+  ```
+
+- `ls` (📂 *List*): Lista os arquivos e pastas do diretório atual.
+  - Use `ls -a` para mostrar arquivos ocultos (que começam com `.`).
+  ```bash
+  ls -a
+  ```
+
+- `cd` (📂 *Change Directory*): Muda para o diretório especificado.
+  ```bash
+  cd /projeto
+  ```
+
+## 🔐 Permissões de Superusuário
+
+- `sudo` (*SuperUser Do*): Executa comandos com permissões elevadas (root).
+  ```bash
+  sudo ls /root
+  ```
+
+- `sudo -i`: Inicia uma sessão interativa como root. Ideal para executar vários comandos administrativos seguidos.
+  ```bash
+  sudo -i
+  ```
+
+- `sudo su`: Inicia uma sessão como root, mas mantém o ambiente do usuário atual.
+  ```bash
+  sudo su
+  ```
+
+## 📄 Manipulação de Arquivos
+
+- `cat` (*Concatenate*): Exibe o conteúdo de arquivos ou concatena arquivos.
+  ```bash
+  cat arquivo.txt
+  ```
+
+## 🚪 Sessões
+
+- `exit`: Encerra a sessão atual do terminal (inclusive sessões com root).
+  ```bash
+  exit
+  ```
+
+## 🔗 Git
+
+- `git clone`: Faz uma cópia local de um repositório remoto do Git.
+  ```bash
+  git clone https://github.com/usuario/repositorio.git
+  ```
+
+---
+
+📝 **Resumo Final**: Estes comandos são a base para navegar, manipular arquivos, acessar permissões elevadas e usar Git no terminal Linux. Praticar cada um deles é essencial para dominar o ambiente de linha de comando!
