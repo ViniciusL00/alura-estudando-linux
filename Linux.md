@@ -469,3 +469,93 @@ Se quiser sair do `top`, basta apertar `q`.
 - Saber usar o `top` te dá poder de diagnóstico e te transforma num verdadeiro **sysadmin** de respeito. 💪🐧
 
 ---
+
+# 🧠 Revisão: Filtrando e Inspecionando Processos no Linux 🖥️🐧
+
+Aprender a filtrar e inspecionar processos é fundamental para manter o controle do sistema Linux. Nesta revisão, vamos entender como usar o comando `ps` e suas variantes para ver o que está acontecendo por trás dos panos.
+
+---
+
+## 🔍 Comando `ps`: Status dos Processos
+
+### 📌 Básico
+
+```bash
+ps
+```
+
+Exibe os processos ativos no terminal atual (sessão atual).
+
+---
+
+## 🔎 `ps aux`: Visão Geral dos Processos
+
+```bash
+ps aux
+```
+
+Mostra **todos os processos** do sistema com informações detalhadas.
+
+| Campo     | Descrição                                                |
+|-----------|----------------------------------------------------------|
+| **VSZ**   | Quantidade de memória virtual usada pelo processo (em KB). |
+| **RSS**   | Memória física usada atualmente (Resident Set Size).     |
+| **TTY**   | Terminal associado ao processo (se houver).              |
+| **STAT**  | Estado atual do processo (ex: S = sleeping, R = running, Z = zombie, T = stopped). |
+| **START** | Hora de início do processo.                              |
+
+---
+
+## 🎯 Filtrando processos específicos
+
+- `ps -u root`: Mostra **apenas processos do usuário root**.
+- `ps -u vinic`: Mostra **os processos do seu usuário**.
+- `ps -C bash`: Filtra os processos **relacionados ao Bash**, o interpretador de comandos.
+
+---
+
+## 🌳 Visualização em Árvore
+
+```bash
+pstree
+```
+
+Mostra os processos como **uma árvore**, revelando quem iniciou quem. Ideal para ver hierarquias e relações entre os processos.
+
+---
+
+## 🧠 Comandos avançados
+
+### 🔥 Ordenar por uso de memória
+
+```bash
+ps aux --sort=-%mem
+```
+
+- Mostra todos os processos **ordenados do que mais consome memória para o que menos consome**.
+- O `--sort=-%mem` significa "ordenar decrescentemente por uso de memória".
+
+### 🎯 Mostrar só os 10 maiores consumidores de RAM
+
+```bash
+ps aux --sort=-%mem | head -n 11
+```
+
+- Esse comando combina dois comandos:
+  - `ps aux --sort=-%mem`: Ordena processos por memória.
+  - `head -n 11`: Mostra apenas as 11 primeiras linhas (a primeira é o cabeçalho, as 10 seguintes são os processos com maior consumo de memória).
+
+---
+
+## ✅ Resumo Rápido
+
+| Comando                            | O que faz 📌                                    |
+|-----------------------------------|-------------------------------------------------|
+| `ps aux`                          | Mostra todos os processos com detalhes          |
+| `ps -u nome_usuario`              | Filtra processos por usuário                    |
+| `ps -C nome_do_programa`          | Filtra processos por nome de programa           |
+| `pstree`                          | Mostra os processos em formato de árvore        |
+| `ps aux --sort=-%mem`             | Ordena processos do que mais consome memória    |
+| `ps aux --sort=-%mem | head -n 11`| Mostra só os top 10 consumidores de RAM         |
+
+---
