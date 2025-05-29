@@ -348,3 +348,46 @@ Vamos revisar como duplicar arquivos e dar nomes novos para pastas e arquivos di
 * `ls -al (List All Long): Combina as opções -a e -l, listando todos os arquivos com detalhes.`
 
 ---
+
+# 🗑️ Revisão: Removendo Arquivos e Obtendo Informações no Terminal Linux
+
+Nesta aula, você aprendeu como apagar arquivos e diretórios, consultar ajuda no terminal e redirecionar saídas. Bora revisar com estilo! 🚀
+
+## 📘 Acessando Ajuda
+
+- `ls --help`: Mostra todas as opções e flags disponíveis para o comando `ls`.
+- `man -k <palavra-chave>`: Mostra uma lista de comandos relacionados à palavra, com descrição resumida.
+  ```bash
+  man -k copy
+  ```
+
+## 🗑️ Removendo Arquivos e Diretórios
+
+- `rm <arquivo>`: Remove arquivos.
+- `rmdir <diretório>`: Remove diretórios vazios.
+- `rm -r <diretório>`: Remove diretórios e seu conteúdo recursivamente (⚠️ cuidado!).
+- `rm -ri <diretório>`: Mesma função do `-r`, mas pede confirmação antes de deletar cada item (🛡️ segurança extra).
+
+## 📤 Redirecionando Saída para Arquivos
+
+- `>`: Sobrescreve um arquivo com a nova saída.
+  ```bash
+  ls > lista_projeto.txt
+  ```
+- `>>`: Adiciona conteúdo ao final do arquivo, sem apagar o que já está lá.
+  ```bash
+  ls >> lista_projeto.txt
+  ```
+
+## 💬 Comando echo
+
+- `echo <mensagem>`: Mostra mensagens no terminal.
+- Pode ser usado para adicionar textos em arquivos:
+  ```bash
+  echo projeto_funcional >> lista_projeto.txt
+  ```
+  ✅ Isso adiciona a linha "projeto_funcional" ao final do arquivo `lista_projeto.txt`.
+
+---
+
+📝 **Resumo Final**: Saber remover arquivos com segurança e redirecionar saídas te ajuda a organizar melhor seus projetos e evitar acidentais desastres! Use `rm -ri` com sabedoria, e `echo` para interações rápidas ou anotações nos seus arquivos! 💣📄💾
