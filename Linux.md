@@ -232,3 +232,119 @@ O **Kernel** é o núcleo do sistema operacional. Ele atua como uma ponte entre 
 ---
 
 📝 **Resumo Final**: Estes comandos são a base para navegar, manipular arquivos, acessar permissões elevadas e usar Git no terminal Linux. Praticar cada um deles é essencial para dominar o ambiente de linha de comando!
+
+# 🗂️ Revisão: Criando Estrutura de Diretórios no Terminal Linux
+
+Nesta aula, aprendemos como criar pastas e arquivos diretamente do terminal. Aqui vai um resumo com exemplos e explicações simples. 🚀
+
+## 📁 Criando Diretórios
+
+- `mkdir <nome>`: Cria um novo diretório (pasta).
+  ```bash
+  mkdir projeto_python
+  ```
+  ✅ Cria uma pasta chamada `projeto_python` no diretório atual.
+
+## 📄 Criando Arquivos
+
+- `touch <nome_arquivo>`: Cria um novo arquivo vazio.
+  ```bash
+  touch projeto_python/projeto_ideias.txt
+  ```
+  ✅ Cria um arquivo `.txt` chamado `projeto_ideias.txt` dentro da pasta `projeto_python`.
+
+## 👀 Visualizando o Conteúdo de um Arquivo
+
+- `cat <arquivo>`: Exibe o conteúdo de um arquivo no terminal.
+  ```bash
+  cat projeto_python/projeto_ideias.txt
+  ```
+  ✅ Mostra o que está escrito dentro do arquivo `.txt` (se houver conteúdo).
+
+## ✍️ Editando Arquivos no Terminal
+
+- `nano <arquivo>`: Abre o editor de texto `nano` para editar arquivos no terminal.
+  ```bash
+  nano projeto_python/projeto_ideias.txt
+  ```
+  ✅ Permite escrever ou editar o conteúdo do arquivo diretamente pela linha de comando.
+
+> 💡 Dica: Para salvar e sair do `nano`, use `Ctrl + O` para salvar e `Ctrl + X` para sair.
+
+---
+
+# 📂 Revisão: Movendo Arquivos e Diretórios no Terminal Linux
+
+Nesta aula você aprendeu a mover arquivos e pastas usando o terminal Linux. Aqui vai um resumo prático pra revisar com estilo! 🚀
+
+## 🗂️ Criando Pastas
+
+- `mkdir <nome>`: Cria um diretório novo.
+  ```bash
+  mkdir ideias
+
+## 📁 Movendo Arquivos
+
+`mv <origem> <destino>`: Move arquivos ou diretórios de um local para outro.
+
+`mv /home/vinic/projeto_phyton/projeto_ideias.txt /home/vinic/projeto_phyton/ideias` 
+
+✅ Move o arquivo projeto_ideias.txt para dentro da pasta ideias.
+
+## 🔍 Listando com Detalhes
+
+`ls -la`: Lista todos os arquivos (inclusive ocultos) com detalhes como permissões, dono, grupo e data de modificação.
+
+`ls -la`
+
+## 📦 Movendo Diretórios
+
+Também é possível mover pastas com `mv`, da mesma forma que arquivos.
+
+`mkdir rascunho`
+`mv rascunho /home/vinic/projeto_phyton/ideias`
+
+
+# 📄 Revisão: Copiando e Renomeando Arquivos e Diretórios no Terminal Linux
+
+Vamos revisar como duplicar arquivos e dar nomes novos para pastas e arquivos direto pelo terminal. 🎯
+
+## 📑 Copiando Arquivos
+
+- `cp <arquivo_origem> <arquivo_destino>`: Cria uma cópia do arquivo.
+  ```bash
+  cp projeto_ideias.txt projeto_ideias_v1.txt
+  ```
+  ✅ Cria uma cópia chamada `projeto_ideias_v1.txt` a partir do arquivo `projeto_ideias.txt`.
+
+## ✏️ Renomeando Arquivos ou Diretórios
+
+- `mv <nome_antigo> <nome_novo>`: Também é usado para renomear.
+  ```bash
+  mv rascunho modelo
+  ```
+  ✅ Agora o diretório ou arquivo chamado `rascunho` passa a se chamar `modelo`.
+
+---
+
+📝 **Resumo Final**: Com `cp` você faz backups e versões dos seus arquivos. Com `mv`, você reorganiza e renomeia como quiser. Tudo isso direto do terminal! 🧠💻
+
+## 🐧 Comando Essenciais
+
+* `mkdir (Make Directory): Cria novos diretórios. (tilizar o comando mkdir para criar e organizar projetos e diretórios de maneira hierárquica)`
+
+* `touch: Cria um arquivo vazio ou atualiza a data de modificação de um arquivo existente. (Criar e editar arquivos de texto com touch)`
+
+* `nano: Editor de texto no terminal, usado para criar e editar arquivos. (Usar o comando nano para inserir e modificar conteúdos diretamente no terminal de um computador)`
+
+* `mv (Move): Move ou renomeia arquivos e diretórios. (Aplicar o comando mv para movimentar e renomear arquivos e diretórios)`
+
+* `cp (Copy): Copia arquivos e diretórios. (Utilizar o comando cp para criar cópias de arquivos.)`
+
+* `clear: Limpa a tela do terminal, removendo o histórico visível.`
+
+* `ls -l (List Long): Lista arquivos e diretórios com detalhes, incluindo permissões e proprietários. (Usar o comando ls com a opção -l para verificar permissões e obter mais detalhes de itens contidos em um diretório)`
+
+* `ls -al (List All Long): Combina as opções -a e -l, listando todos os arquivos com detalhes.`
+
+---
