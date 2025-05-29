@@ -410,3 +410,62 @@ Nesta aula, você aprendeu como apagar arquivos e diretórios, consultar ajuda n
 - `sudo apt remove pacote` ➖  
   Remove um pacote instalado do sistema. É o “tira esse troço daqui!”  
   **Precisa de superusuário.**
+
+---
+
+# 🔍 Revisão: Analisando Processos e Recursos no Linux com `top` 🖥️🐧
+
+O comando `top` é uma das ferramentas mais úteis do terminal Linux para **monitorar processos em tempo real**. Ele exibe quais programas estão rodando e **quanto de CPU, memória e outros recursos** cada um está usando.
+
+---
+
+## 🚀 Comando Principal
+
+```bash
+top
+```
+
+Esse comando abre uma interface em tempo real no terminal mostrando os processos em execução.
+
+---
+
+## 🧠 Colunas do `top` – O que significa cada uma?
+
+| Campo        | Significado                                                                 |
+|--------------|------------------------------------------------------------------------------|
+| **PID**      | Process ID — Identificador único do processo.                               |
+| **USER**     | Nome do usuário que iniciou o processo.                                     |
+| **PR**       | Prioridade do processo (quanto menor, maior prioridade).                    |
+| **NI**       | Valor de "Nice" — influência na prioridade. Valores negativos = mais prioridade. |
+| **VIRT**     | Memória virtual usada pelo processo (em KB).                                |
+| **RES**      | Memória residente (RAM efetivamente usada).                                 |
+| **SHR**      | Memória compartilhada com outros processos.                                 |
+| **S**        | Estado do processo: S = sleeping, R = running, Z = zombie, T = stopped.     |
+| **%CPU**     | Porcentagem de CPU que o processo está usando.                              |
+| **%MEM**     | Porcentagem de RAM que o processo está usando.                              |
+| **TIME+**    | Tempo total de CPU usado pelo processo desde o início.                      |
+| **COMMAND**  | Comando que iniciou o processo.                                              |
+
+---
+
+## 📊 Atalhos dentro do `top`
+
+- 🔼 **P**: Ordena os processos pelo uso de CPU (de maior para menor).
+- 🧠 **M**: Ordena os processos pelo uso de memória RAM.
+
+---
+
+## 🧠 Dica Ninja
+
+Se quiser sair do `top`, basta apertar `q`.
+
+---
+
+## 📌 Resumo
+
+- Use `top` para ver tudo rodando no seu sistema.
+- Ordene por CPU com **P** e por memória com **M**.
+- Entenda as colunas para saber exatamente o que está consumindo recursos.
+- Saber usar o `top` te dá poder de diagnóstico e te transforma num verdadeiro **sysadmin** de respeito. 💪🐧
+
+---
