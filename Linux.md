@@ -391,3 +391,22 @@ Nesta aula, você aprendeu como apagar arquivos e diretórios, consultar ajuda n
 ---
 
 📝 **Resumo Final**: Saber remover arquivos com segurança e redirecionar saídas te ajuda a organizar melhor seus projetos e evitar acidentais desastres! Use `rm -ri` com sabedoria, e `echo` para interações rápidas ou anotações nos seus arquivos! 💣📄💾
+
+# 📚 Revisão Rápida de Gerenciador de Pacotes 🐧
+
+## Gerenciador de Pacotes (APT)
+- `sudo apt update` 🔄  
+  Atualiza a lista de pacotes disponíveis e suas versões no sistema. Pergunta ao terminal: "Tem atualização aí?"  
+  **Precisa de superusuário.**
+
+- `sudo apt upgrade` ⬆️  
+  Instala todas as atualizações disponíveis para os pacotes do sistema. Manda: "Agora atualiza tudo, por favor!"  
+  **Precisa de superusuário.**
+
+- `sudo apt install pacote` ➕  
+  Instala um pacote específico que você quiser. Tipo pedir pro Linux: "Me traz esse programa aí."  
+  **Precisa de superusuário.**
+
+- `sudo apt remove pacote` ➖  
+  Remove um pacote instalado do sistema. É o “tira esse troço daqui!”  
+  **Precisa de superusuário.**
