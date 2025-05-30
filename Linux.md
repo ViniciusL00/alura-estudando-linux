@@ -713,3 +713,130 @@ pstree
 💡 **Dica de ouro**: Use `kill` para agir com precisão e `pkill` ou `killall` para resolver rapidamente processos travados ou em massa.
 
 ---
+
+# 📁 Revisão: Permissões com `chmod` no Linux 🔐
+
+## 🛠️ O que é `chmod`?
+
+O comando `chmod` (change mode) é utilizado no Linux para **alterar as permissões de arquivos e diretórios**. Ele define quem pode **ler (r), escrever (w)** ou **executar (x)** arquivos.
+
+---
+
+## 🔍 Como funcionam as permissões?
+
+As permissões são divididas em **três grupos**:
+
+1. 👤 **Proprietário**
+2. 👥 **Grupo**
+3. 🌐 **Outros usuários**
+
+Cada grupo tem três tipos de permissões possíveis:
+
+- `r` = **read** (leitura)
+- `w` = **write** (escrita)
+- `x` = **execute** (execução)
+
+Exemplo de representação:  
+`rw-r--r--`  
+👆 Isso significa:
+- Proprietário: leitura e escrita
+- Grupo: somente leitura
+- Outros: somente leitura
+
+---
+
+## 🔢 Sistema Numérico de Permissões
+
+Para definir permissões via `chmod`, usamos a soma de valores:
+
+| Permissão | Valor |
+|-----------|--------|
+| `r` (read) | 4 |
+| `w` (write) | 2 |
+| `x` (execute) | 1 |
+
+Esses valores são somados para definir o nível de acesso:
+
+- `7` = **rwx** (leitura + escrita + execução)
+- `6` = **rw-** (leitura + escrita)
+- `5` = **r-x** (leitura + execução)
+- `4` = **r--** (somente leitura)
+
+---
+
+## 🔐 Exemplo prático: Protegendo sua chave SSH
+
+Comando utilizado:
+```bash
+chmod 400 caminho/para/sua-chave.pem
+```
+
+📌 O que esse `400` significa?
+
+- `4` (leitura) para o proprietário
+- `0` (nenhuma permissão) para o grupo
+- `0` (nenhuma permissão) para outros
+
+✅ **Somente o proprietário pode ler o arquivo**, o que é essencial para garantir a segurança da **chave privada SSH**, impedindo que terceiros acessem ou modifiquem.
+
+---
+
+## 🧠 Dica de ouro
+
+Quando estiver lidando com arquivos sensíveis (como chaves privadas), **sempre garanta que só você tenha acesso**. Usar `chmod` corretamente pode evitar dores de cabeça e brechas de segurança!
+
+---
+
+# 📚 Revisão: Conexão Remota, Permissões e Gerenciamento de Pacotes no Linux
+
+## 🔐 SSH - Acesso Seguro ao Servidor
+
+- **`ssh` (Secure Shell)**  
+  Conecta de forma segura seu terminal local a um servidor remoto. Muito usado para acessar servidores na nuvem, como instâncias EC2 da AWS.
+
+- **`ssh -i caminho/para/sua-chave.pem usuario@ip_da_instância`**  
+  Estabelece a conexão com o servidor **usando uma chave privada**. O `-i` indica que você está informando o caminho para a chave `.pem`.
+
+---
+
+## 📦 Gerenciando Pacotes no Amazon Linux (YUM)
+
+- **`sudo yum update`**  
+  Atualiza todos os pacotes da máquina com base no gerenciador de pacotes **YUM** (usado em distros como CentOS, Red Hat e Amazon Linux).  
+  🛠️ Equivalente ao `apt update && apt upgrade` nas distros baseadas em Debian/Ubuntu.
+
+---
+
+## 🧾 Histórico de Comandos
+
+- **`history`**  
+  Mostra todos os comandos que você já executou no terminal até agora.  
+  Ótimo para revisar o que foi feito ou repetir comandos antigos com `!numero`.
+
+---
+
+⚠️ **Lembre-se:** Para conexões SSH com chaves privadas, é fundamental manter as permissões do arquivo `.pem` restritas com `chmod 400` para garantir segurança.
+
+## 🔐 Conexão Segura e Permissões no Linux (Resumo Rápido)
+
+### ☁️ Configuração de Instância na AWS (EC2)
+- Criamos uma **instância EC2** e configuramos para **permitir tráfego SSH (porta 22)**.
+- Geramos um **par de chaves (.pem)** para autenticação segura.
+
+### 🧩 Acesso Seguro com SSH
+- Utilizamos o comando:
+  ```
+  ssh -i caminho/para/sua-chave.pem usuário@ip_da_instância
+  ```
+- Isso garante uma **conexão criptografada e segura** com o servidor remoto.
+
+### 🌐 Acesso via Navegador com EC2 Connect
+- O **Amazon EC2 Connect** permite **acesso direto pelo navegador**, sem precisar do terminal.
+- Útil para tarefas rápidas de administração.
+
+### 🛡️ Permissões com `chmod`
+- O comando `chmod` foi utilizado para **proteger a chave privada**:
+  ```
+  chmod 400 sua-chave.pem
+  ```
+- Isso garante que **só o proprietário tenha acesso de leitura**, aumentando a **segurança** da conexão SSH.
