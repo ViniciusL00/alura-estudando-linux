@@ -559,3 +559,157 @@ ps aux --sort=-%mem | head -n 11
 | `ps aux --sort=-%mem | head -n 11`| Mostra só os top 10 consumidores de RAM         |
 
 ---
+
+# 🧠 Revisão: Filtrando e Ordenando Saída de Comandos no Terminal Linux 🖥️🐧
+
+Ao utilizar o terminal, muitas vezes a **saída dos comandos pode ser extensa**, dificultando a análise direta. Felizmente, podemos **filtrar, ordenar e exibir** apenas as partes relevantes usando alguns comandos.
+---
+
+## 🔗 Pipe (`|`): Encadeamento de Comandos
+
+```bash
+comando1 | comando2
+```
+
+- O **pipe (`|`)** envia a **saída do primeiro comando** como **entrada para o segundo**.
+- Permite **encadear comandos** para refinar o resultado final.
+
+---
+
+## 🔍 `grep`: Filtro por Padrão
+
+```bash
+ps aux | grep firefox
+```
+
+- O comando `grep` **busca padrões de texto**.
+- No exemplo acima, ele filtra a lista de processos para mostrar **apenas os que contêm "firefox"**.
+
+---
+
+## 📋 `head` e `tail`: Visualizar Linhas Específicas
+
+### 👀 `head`
+
+```bash
+head -n 5 arquivo.txt
+```
+
+- Exibe as **primeiras 5 linhas** do arquivo ou da saída de um comando.
+- Padrão: 10 linhas se não usar `-n`.
+
+### 👇 `tail`
+
+```bash
+tail -n 5 arquivo.txt
+```
+
+- Exibe as **últimas 5 linhas**.
+- Também exibe 10 por padrão sem `-n`.
+
+---
+
+## 🧮 `sort`: Ordenar a Saída
+
+### 🔥 Ordenar por Uso de CPU
+
+```bash
+ps aux --sort=-%CPU
+```
+
+- Ordena os processos com **base no uso da CPU**.
+- O sinal **`-`** indica **ordem decrescente** (do maior para o menor).
+
+---
+
+- 🔢 **Ordenar por uso de CPU em ordem crescente**:
+  ```bash
+  ps aux --sort=%CPU
+
+---
+
+## ✅ Resumo Rápido
+
+| Comando                             | O que faz 📌                                        |
+|-------------------------------------|-----------------------------------------------------|
+| `comando1 | comando2`               | Usa a saída de um como entrada de outro             |
+| `grep padrão`                       | Filtra linhas que contêm o padrão                   |
+| `head -n X`                         | Mostra as X primeiras linhas                        |
+| `tail -n X`                         | Mostra as X últimas linhas                          |
+| `sort`                              | Ordena linhas de texto                              |
+| `ps aux --sort=-%CPU`               | Ordena processos do maior para o menor uso de CPU   |
+| `ps aux --sort=%CPU`                | Ordena processos do menor para o maior uso de CPU   |
+
+---
+
+# 🧠 Revisão: Controle de Processos no Linux 🖥️
+
+Aprender a controlar processos é essencial para gerenciar corretamente o que está rodando no seu sistema. Aqui vão os principais comandos e suas funções 👇
+
+---
+
+## 🧨 `kill`: Encerra processos manualmente
+
+### ✅ Encerramento suave
+```bash
+kill [PID]
+```
+- Envia o sinal **SIGTERM**, pedindo para o processo encerrar de forma segura.
+
+### ❌ Encerramento forçado
+```bash
+kill -9 [PID]
+```
+- Envia o sinal **SIGKILL**, forçando o processo a encerrar **imediatamente**, sem chance de salvar dados.
+
+### ⏸️ Pausar processo
+```bash
+kill -STOP [PID]
+```
+- Envia o sinal **SIGSTOP**, pausando o processo sem encerrar.
+
+### ▶️ Retomar processo pausado
+```bash
+kill -CONT [PID]
+```
+- Envia o sinal **SIGCONT**, retomando o processo pausado.
+
+---
+
+## 🔎 `pkill`: Encerra processo pelo nome
+```bash
+pkill nome_do_processo
+```
+- Encerra todos os processos que tenham o nome indicado. Ex: `pkill firefox`
+
+---
+
+## 🚫 `killall`: Encerra todos processos com mesmo nome
+```bash
+killall nome_do_processo
+```
+- Mata todos os processos com o nome exato informado. Útil para encerrar tudo de uma vez.
+
+---
+
+## 🧬 `pstree`: Visualiza processos como uma árvore 🌳
+```bash
+pstree
+```
+- Mostra processos em forma de árvore, destacando quem criou quem (pai e filhos).
+
+---
+
+## 📌 Extras úteis (não explicados antes):
+
+### 🔍 `ps -p [PID]`
+- Mostra informações detalhadas de **um processo específico**.
+
+### 🔍 `ps -C [comando]`
+- Filtra os processos que rodam um **comando específico**, ex: `ps -C bash`
+
+---
+
+💡 **Dica de ouro**: Use `kill` para agir com precisão e `pkill` ou `killall` para resolver rapidamente processos travados ou em massa.
+
+---
